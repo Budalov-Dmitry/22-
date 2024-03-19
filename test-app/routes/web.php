@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use App\Http\Controllers\LinkController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/{shortLink}', [LinkController::class, 'shortLinkRedirect']);
